@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="../css/bootstrap.css">
+<div class="container-fluid">
+  <div class="row">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active" role="article">
+        <a href="#article" role="tab" data-toggle="tab" aria-controls="article">上传文章</a>
+      </li>
+      <li role="works">
+        <a href="#works" role="tab" data-toggle="tab" aria-controls="works">上传作品</a>
+      </li>
+      <li role="information">
+        <a href="#information" role="tab" data-toggle="tab" aria-controls="information">上传老师信息</a>
+      </li>
+      <li role="edit">
+        <a href="#edit" role="tab" data-toggle="tab" aria-controls="edit">编辑文章</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="article" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+          <form role="form">
+            <div class="form-group">
+              <label class="control-label">标题</label>
+              <input name="title1" id="title1" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label class="control-label">图文</label>
+              <textarea name="content1" id="content1" cols="20" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="file1">File input</label>
+              <input type="file" name="file1" id="file1">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                <button type="submit" class="btn btn-primary">上传文章</button>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                <button type="button" class="btn btn-success">新增图片</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="works" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <form role="form" method="post" action="simple/upload">
+              <div class="form-group">
+                <label class="control-label">标题</label>
+                <input name="title2" id="title2" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label">图文</label>
+                <textarea name="content2" id="content2" cols="20" rows="10" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="file2">File input</label>
+                <input type="file" id="file2">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                  <button type="submit" class="btn btn-primary">上传文章</button>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                  <button type="button" class="btn btn-success">新增图片</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="information" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <form role="form" action="simple/index" method="post">
+              <div class="form-group">
+                <label class="control-label">标题</label>
+                <input name="title3" id="title4" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label">图文</label>
+                <textarea name="content3" id="content3" cols="20" rows="10" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="file3">File input</label>
+                <!--<input type="file" name="file3" id="file3" onchange="getPhoto(this)">-->
+
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                  <button type="submit" class="btn btn-primary"><%= link_to "上传文章", :action => "index" %></button>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                  <button type="button" class="btn btn-success">新增图片</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="edit" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <form>
+              <div class="form-group">
+                <label>请输入文章标题</label>
+                <input name="search" id="search" class="form-group" type="text">
+                <button type="submit" class="btn btn-success">搜索</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script>
+//    var imgurl = "";
+//    function getPhoto(node) {
+//        var imgURL = "";
+//        try{
+//            var file = null;
+//            if(node.files && node.files[0] ){
+//                file = node.files[0];
+//            }else if(node.files && node.files.item(0)) {
+//                file = node.files.item(0);
+//            }
+//            //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+//            try{
+//                imgURL =  file.getAsDataURL();
+//            }catch(e){
+//                imgRUL = window.URL.createObjectURL(file);
+//            }
+//        }catch(e){
+//            if (node.files && node.files[0]) {
+//                var reader = new FileReader();
+//                reader.onload = function (e) {
+//                    imgURL = e.target.result;
+//                };
+//                reader.readAsDataURL(node.files[0]);
+//            }
+//        }
+//        creatImg(imgRUL);
+//        return imgURL;
+//    }
+
+
+</script>
