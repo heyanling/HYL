@@ -25,7 +25,7 @@ class SimpleController < ApplicationController
       session[:image] = @image
 
       redirect_to  :action=>'index',:title=>@title,:content=>@content,:image=>@image
-     # look(@file)
+   
     end
 
   end
